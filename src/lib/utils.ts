@@ -13,3 +13,7 @@ export function waLink(message: string) {
 export function unsplash(id: string, w = 1200, q = 78) {
   return `https://images.unsplash.com/${id}?q=${q}&w=${w}&auto=format&fit=crop`;
 }
+
+export function formatINR(n: number) {
+  return `₹${n.toLocaleString("en-IN")}`;
+}

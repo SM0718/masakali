@@ -11,4 +11,21 @@ export default defineConfig({
       "@": fileURLToPath(new URL("./src", import.meta.url)),
     },
   },
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          "react-vendor": ["react", "react-dom", "react-router-dom"],
+          motion: ["framer-motion"],
+          icons: ["iconsax-reactjs"],
+          ui: [
+            "@radix-ui/react-dialog",
+            "@radix-ui/react-slot",
+            "@radix-ui/react-tabs",
+            "@radix-ui/react-visually-hidden",
+          ],
+        },
+      },
+    },
+  },
 });

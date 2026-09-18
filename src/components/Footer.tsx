@@ -1,6 +1,7 @@
 import { Call, Clock, Instagram, Location, Whatsapp } from "iconsax-reactjs";
+import { Link } from "react-router-dom";
 
-import { BRAND, NAV_LINKS, STUDIO_HOURS } from "@/lib/site";
+import { BRAND, CATEGORIES, STUDIO_HOURS } from "@/lib/site";
 import { waLink } from "@/lib/utils";
 
 export function Footer() {
@@ -9,12 +10,12 @@ export function Footer() {
       <div className="mx-auto max-w-[96rem] px-5 pb-10 pt-16 md:px-10 md:pt-20">
         <div className="grid grid-cols-2 gap-x-8 gap-y-12 md:grid-cols-12">
           {/* Brand */}
-          <div className="col-span-2 md:col-span-5">
+          <div className="col-span-2 md:col-span-4">
             <p className="font-serif text-3xl font-medium tracking-wide text-foreground">
               Masakalli
             </p>
             <p className="mt-1 font-serif text-sm italic text-muted-foreground">
-              Every stitch carries a story.
+              {BRAND.tagline}
             </p>
             <p className="mt-6 max-w-xs text-sm font-light leading-relaxed text-muted-foreground">
               Handmade ethnic and Indo-Western wear, tailored in small numbered batches from a
@@ -34,25 +35,62 @@ export function Footer() {
             </a>
           </div>
 
-          {/* Navigate */}
+          {/* Shop */}
           <div className="md:col-span-3">
-            <p className="eyebrow mb-5">Navigate</p>
+            <p className="eyebrow mb-5">Shop</p>
             <ul className="space-y-3.5">
-              {NAV_LINKS.map((link) => (
-                <li key={link.href}>
-                  <a
-                    href={link.href}
+              {CATEGORIES.map((c) => (
+                <li key={c.slug}>
+                  <Link
+                    to={`/shop/${c.slug}`}
                     className="text-sm font-light text-foreground/80 transition-colors duration-300 hover:text-primary"
                   >
-                    {link.label}
-                  </a>
+                    {c.label}
+                  </Link>
                 </li>
               ))}
             </ul>
           </div>
 
+          {/* About / account */}
+          <div className="md:col-span-3">
+            <p className="eyebrow mb-5">Masakalli</p>
+            <ul className="space-y-3.5 text-sm font-light text-foreground/80">
+              <li>
+                <Link to="/about" className="transition-colors duration-300 hover:text-primary">
+                  Our Story
+                </Link>
+              </li>
+              <li>
+                <Link to="/visit" className="transition-colors duration-300 hover:text-primary">
+                  Visit the studio
+                </Link>
+              </li>
+              <li>
+                <Link to="/shop" className="transition-colors duration-300 hover:text-primary">
+                  Full collections
+                </Link>
+              </li>
+              <li>
+                <Link to="/wishlist" className="transition-colors duration-300 hover:text-primary">
+                  Wishlist
+                </Link>
+              </li>
+              <li>
+                <Link to="/checkout" className="transition-colors duration-300 hover:text-primary">
+                  Your order
+                </Link>
+              </li>
+              <li>
+                <Link to="/account" className="transition-colors duration-300 hover:text-primary">
+                  Measurements & account
+                </Link>
+              </li>
+            </ul>
+          </div>
+
           {/* Contact */}
-          <div className="md:col-span-2">
+          <div className="col-span-2 md:col-span-2">
             <p className="eyebrow mb-5">Contact</p>
             <ul className="space-y-3.5 text-sm font-light text-foreground/80">
               <li>
@@ -85,30 +123,23 @@ export function Footer() {
                 </a>
               </li>
             </ul>
-          </div>
-
-          {/* Studio */}
-          <div className="md:col-span-2">
-            <p className="eyebrow mb-5">Studio</p>
-            <ul className="space-y-3.5 text-sm font-light text-foreground/80">
+            <div className="mt-6 space-y-3">
               {STUDIO_HOURS.map((row) => (
-                <li key={row.day}>
-                  <span className="flex items-start gap-2">
-                    <Clock size="15" variant="Linear" className="mt-0.5 shrink-0" />
-                    <span>
-                      {row.day}
-                      <br />
-                      <span className="text-muted-foreground">{row.hours}</span>
-                    </span>
+                <span key={row.day} className="flex items-start gap-2 text-sm font-light text-foreground/80">
+                  <Clock size="15" variant="Linear" className="mt-0.5 shrink-0" />
+                  <span>
+                    {row.day}
+                    <br />
+                    <span className="text-muted-foreground">{row.hours}</span>
                   </span>
-                </li>
+                </span>
               ))}
-            </ul>
-            <p className="mt-5 text-sm font-light text-muted-foreground">
-              {BRAND.addressLines[0]}
-              <br />
-              {BRAND.addressLines[1]}
-            </p>
+              <p className="text-sm font-light text-muted-foreground">
+                {BRAND.addressLines[0]}
+                <br />
+                {BRAND.addressLines[1]}
+              </p>
+            </div>
           </div>
         </div>
 

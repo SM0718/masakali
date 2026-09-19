@@ -3,6 +3,7 @@ import { ArrowDown2, Whatsapp } from "iconsax-reactjs";
 import * as React from "react";
 
 import { Button } from "@/components/ui/button";
+import { FestiveParticles } from "@/components/FestiveParticles";
 import { EASE } from "@/lib/motion";
 import { HERO_SLIDES } from "@/lib/site";
 import { waLink } from "@/lib/utils";
@@ -66,6 +67,17 @@ export function Hero() {
       <div className="absolute inset-0 bg-gradient-to-b from-black/55 via-black/25 to-black/70" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/30 via-transparent to-black/10" />
 
+      {/* Festive layer — lamp-light motes + seasonal glow */}
+      <FestiveParticles />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute -top-10 right-[-6rem] z-[1] h-80 w-80 rounded-full bg-sharodiya-gold/15 blur-[110px]"
+      />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute bottom-0 left-1/2 z-[1] h-40 w-[34rem] -translate-x-1/2 rounded-full bg-vermilion/15 blur-[110px]"
+      />
+
       {/* Content */}
       <motion.div
         style={{ y: contentY, opacity: contentOpacity }}
@@ -80,7 +92,7 @@ export function Hero() {
           >
             <span className="eyebrow text-ivory/70">Kolkata · Handmade</span>
             <span className="h-px w-14 bg-ivory/30" />
-            <span className="eyebrow text-ivory/70">Est. 2016</span>
+            <span className="eyebrow text-sharodiya-gold-bright">শারদীয়া ২০২৬</span>
           </motion.div>
 
           <h1 className="text-[clamp(2.75rem,7.5vw,6.75rem)] font-light leading-[1.02] tracking-tight text-ivory">

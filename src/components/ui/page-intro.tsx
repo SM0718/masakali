@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 
+import { FestiveEyebrow } from "@/components/Alpona";
 import { Reveal } from "@/components/Reveal";
 import { cn } from "@/lib/utils";
 
@@ -55,10 +56,7 @@ export function PageIntro({
     <div className={cn("border-b border-line", className)}>
       <div className="mx-auto max-w-[96rem] px-5 pb-14 pt-8 md:px-10 md:pb-20 md:pt-12">
         <Reveal>
-          <span className="mb-6 flex items-center gap-3">
-            <span className="h-px w-10 bg-primary" />
-            <span className="eyebrow">{eyebrow}</span>
-          </span>
+          <FestiveEyebrow className="mb-6">{eyebrow}</FestiveEyebrow>
           <h1 className="font-serif text-4xl font-light leading-[1.06] tracking-tight md:text-6xl">
             {title}
           </h1>

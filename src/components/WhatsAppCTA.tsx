@@ -16,6 +16,7 @@ const MARQUEE_WORDS = [
   "Palazzo Sets",
   "Indo-Western",
   "Bridal",
+  "Puja Edit",
 ];
 
 export function WhatsAppCTA() {
@@ -30,6 +31,11 @@ export function WhatsAppCTA() {
             backgroundImage:
               "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)'/%3E%3C/svg%3E\")",
           }}
+        />
+        {/* Alpona season layer */}
+        <div
+          aria-hidden
+          className="alpona-dots absolute inset-0 opacity-[0.05] mix-blend-screen"
         />
         {/* Warm glow */}
         <div
@@ -112,6 +118,10 @@ export function WhatsAppCTA() {
               ))}
             </div>
           </div>
+
+          <p className="mt-10 text-center font-serif text-lg italic leading-relaxed text-ivory/60">
+            শুভ শারদীয়া — this autumn, dressed in vermilion and gold.
+          </p>
         </div>
       </div>
     </section>

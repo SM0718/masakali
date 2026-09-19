@@ -1,6 +1,8 @@
 import { Call, Clock, Instagram, Location, Whatsapp } from "iconsax-reactjs";
 import { Link } from "react-router-dom";
 
+import { FestiveDivider } from "@/components/Alpona";
+import { PujaCountdown } from "@/components/PujaCountdown";
 import { BRAND, CATEGORIES, STUDIO_HOURS } from "@/lib/site";
 import { waLink } from "@/lib/utils";
 
@@ -144,13 +146,25 @@ export function Footer() {
         </div>
 
         {/* Bottom bar */}
-        <div className="mt-16 flex flex-col items-start gap-3 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
-          <p className="text-[0.66rem] uppercase tracking-[0.2em] text-muted-foreground">
-            © {new Date().getFullYear()} Masakalli · Handmade in Kolkata
-          </p>
-          <p className="font-serif text-sm italic text-muted-foreground">
-            Ethnic wear, redefined — saree to sangeet.
-          </p>
+        <div className="mt-16">
+          <FestiveDivider className="mb-6" />
+          <div className="flex flex-col items-center gap-1 pb-5 text-center">
+            <PujaCountdown
+              showSeconds
+              className="justify-center text-lg text-sharodiya-gold dark:text-sharodiya-gold-bright"
+            />
+            <span className="text-[0.58rem] uppercase tracking-[0.28em] text-muted-foreground">
+              Days to Shashti · Durga Puja
+            </span>
+          </div>
+          <div className="flex flex-col items-start justify-between gap-3 border-t border-line pt-6 md:flex-row md:items-center md:justify-between">
+            <p className="text-[0.66rem] uppercase tracking-[0.2em] text-muted-foreground">
+              © {new Date().getFullYear()} Masakalli · Handmade in Kolkata
+            </p>
+            <p className="font-serif text-sm italic text-muted-foreground">
+              শুভ শারদীয়া — saree to sangeet.
+            </p>
+          </div>
         </div>
       </div>
     </footer>

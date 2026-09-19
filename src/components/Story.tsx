@@ -1,6 +1,7 @@
 import { motion, useScroll, useTransform } from "framer-motion";
 import * as React from "react";
 
+import { FestiveDivider, FestiveEyebrow } from "@/components/Alpona";
 import { Reveal } from "@/components/Reveal";
 import { Img } from "@/components/Img";
 import { EASE } from "@/lib/motion";
@@ -25,15 +26,13 @@ export function Story() {
 
   return (
     <section ref={ref} id="story" className="relative overflow-hidden py-24 md:py-36">
+      <FestiveDivider className="-mt-12 pb-16 md:-mt-16 md:pb-20" />
       <div className="mx-auto max-w-[96rem] px-5 md:px-10">
         <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-10">
           {/* Copy */}
           <div className="order-2 lg:order-1 lg:col-span-6 lg:pr-14">
             <Reveal>
-              <span className="mb-6 flex items-center gap-3">
-                <span className="h-px w-10 bg-primary" />
-                <span className="eyebrow">Our Story</span>
-              </span>
+              <FestiveEyebrow className="mb-6">Our Story</FestiveEyebrow>
             </Reveal>
 
             <Reveal delay={0.08}>
@@ -56,6 +55,10 @@ export function Story() {
                   We work in jewel tones that flatter lamp-light — maroon, mustard, olive and old
                   rose — beside the quiet pastels of a Kolkata winter. No mass production, no
                   repeats at the drop: each piece is made once, for the person it is meant for.
+                </p>
+                <p>
+                  And every Sharadiya, the studio turns to vermilion and muted gold — the colour
+                  of the pandals, cut into the season's lehengas and tissue-bordered sarees.
                 </p>
               </div>
             </Reveal>

@@ -10,7 +10,7 @@ import { CATEGORIES, BRAND } from "@/lib/site";
 import { useStore } from "@/lib/store";
 import { cn, waLink } from "@/lib/utils";
 
-export function Nav() {
+export function Nav({ bannerOffset = "0px" }: { bannerOffset?: string }) {
   const location = useLocation();
   const [scrolled, setScrolled] = React.useState(false);
   const [menuOpen, setMenuOpen] = React.useState(false);
@@ -43,7 +43,8 @@ export function Nav() {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.9, ease: [0.22, 1, 0.36, 1], delay: 0.1 }}
-      className={`fixed inset-x-0 top-0 z-40 transition-[background-color,border-color,backdrop-filter] duration-700 ${
+      style={{ top: bannerOffset }}
+      className={`fixed inset-x-0 z-40 transition-[background-color,border-color,backdrop-filter,top] duration-700 ${
         solid
           ? "border-b border-line bg-background/85 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"

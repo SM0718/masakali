@@ -1,10 +1,11 @@
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useState } from "react";
 
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
 import { ReelPopup } from "@/components/ReelPopup";
 import { ScrollManager } from "@/components/ScrollManager";
+import { SeasonalBanner } from "@/components/SeasonalBanner";
 import { ThemeProvider } from "@/lib/theme";
 import { StoreProvider } from "@/lib/store";
 import HomePage from "@/pages/HomePage";
@@ -28,14 +29,17 @@ function PageLoader() {
 }
 
 export default function App() {
+  const [bannerOpen, setBannerOpen] = useState(true);
+
   return (
     <BrowserRouter>
       <ThemeProvider>
         <StoreProvider>
           <ScrollManager />
+          <SeasonalBanner open={bannerOpen} onClose={() => setBannerOpen(false)} />
+          <Nav bannerOffset={bannerOpen ? "2.5rem" : "0px"} />
           <ReelPopup />
           <div className="grain relative min-h-screen bg-background text-foreground">
-            <Nav />
             <Suspense fallback={<PageLoader />}>
               <Routes>
                 <Route path="/" element={<HomePage />} />

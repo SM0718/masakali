@@ -2,6 +2,7 @@ import { Clock, Instagram, Location, Whatsapp } from "iconsax-reactjs";
 import * as React from "react";
 
 import { Reveal } from "@/components/Reveal";
+import { FestiveEyebrow } from "@/components/Alpona";
 import { Button } from "@/components/ui/button";
 import { BRAND, STUDIO_HOURS } from "@/lib/site";
 import { waLink } from "@/lib/utils";
@@ -17,10 +18,7 @@ export function Visit() {
           {/* Details */}
           <div className="lg:col-span-5">
             <Reveal>
-              <span className="mb-6 flex items-center gap-3">
-                <span className="h-px w-10 bg-primary" />
-                <span className="eyebrow">Visit Us</span>
-              </span>
+              <FestiveEyebrow className="mb-6">Visit Us</FestiveEyebrow>
               <h2 className="max-w-md text-4xl font-light leading-[1.1] tracking-tight md:text-5xl">
                 The studio is open, <em className="italic text-primary">coffee included.</em>
               </h2>

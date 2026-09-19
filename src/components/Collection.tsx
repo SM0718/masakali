@@ -2,6 +2,7 @@ import { ArrowRight } from "iconsax-reactjs";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 
+import { FestiveEyebrow } from "@/components/Alpona";
 import { Reveal } from "@/components/Reveal";
 import { ShopCard } from "@/components/ShopCard";
 import { Button } from "@/components/ui/button";
@@ -39,10 +40,7 @@ export function Collection() {
         {/* Header */}
         <div className="grid grid-cols-1 gap-8 md:grid-cols-12 md:items-end">
           <Reveal className="md:col-span-7">
-            <span className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-primary" />
-              <span className="eyebrow">Signature Collection</span>
-            </span>
+            <FestiveEyebrow className="mb-6">Signature Collection</FestiveEyebrow>
             <h2 className="max-w-xl text-4xl font-light leading-[1.08] tracking-tight md:text-5xl lg:text-[3.6rem]">
               Made once, for the person{" "}
               <em className="italic text-primary">it is meant for.</em>
@@ -63,6 +61,10 @@ export function Collection() {
             <p className="mt-3 max-w-sm text-[0.95rem] font-light leading-relaxed text-muted-foreground md:ml-auto">
               A study in deep maroons, old mustards and quiet ivories. Tap a piece
               to see it closer — every work is numbered and made to order.
+            </p>
+            <p className="mt-4 flex items-center gap-2 text-[0.62rem] uppercase tracking-[0.22em] text-vermilion-bright md:ml-auto">
+              <span className="h-1 w-1 rounded-full bg-vermilion" />
+              The Puja Edit · Shashti through Dashami
             </p>
           </Reveal>
         </div>

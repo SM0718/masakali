@@ -3,6 +3,7 @@ import { ArrowLeft, ArrowRight, QuoteUp, Star1 } from "iconsax-reactjs";
 import * as React from "react";
 
 import { Reveal } from "@/components/Reveal";
+import { FestiveEyebrow } from "@/components/Alpona";
 import { Img } from "@/components/Img";
 import { TESTIMONIALS } from "@/lib/site";
 
@@ -35,10 +36,7 @@ export function Testimonials() {
         {/* Header */}
         <div className="flex flex-wrap items-end justify-between gap-6">
           <Reveal>
-            <span className="mb-6 flex items-center gap-3">
-              <span className="h-px w-10 bg-primary" />
-              <span className="eyebrow">Client Diaries</span>
-            </span>
+            <FestiveEyebrow className="mb-6">Client Diaries</FestiveEyebrow>
             <h2 className="max-w-xl text-4xl font-light leading-[1.08] tracking-tight md:text-5xl">
               Worn, loved,
               <em className="italic text-primary"> remembered.</em>

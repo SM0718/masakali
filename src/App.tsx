@@ -3,6 +3,7 @@ import { lazy, Suspense } from "react";
 
 import { Footer } from "@/components/Footer";
 import { Nav } from "@/components/Nav";
+import { ReelPopup } from "@/components/ReelPopup";
 import { ScrollManager } from "@/components/ScrollManager";
 import { ThemeProvider } from "@/lib/theme";
 import { StoreProvider } from "@/lib/store";
@@ -32,6 +33,7 @@ export default function App() {
       <ThemeProvider>
         <StoreProvider>
           <ScrollManager />
+          <ReelPopup />
           <div className="grain relative min-h-screen bg-background text-foreground">
             <Nav />
             <Suspense fallback={<PageLoader />}>
